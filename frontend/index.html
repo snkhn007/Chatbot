@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyBot — AI Study Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
+</head>
+<body>
+
+<div class="app-wrapper">
+
+  <!-- ====================================================
+       SIDEBAR
+       ==================================================== -->
+  <aside class="sidebar">
+
+    <!-- Logo -->
+    <div class="sidebar-logo">
+      <div class="logo-icon">📚</div>
+      <div class="logo-text">Study<span>Bot</span></div>
+    </div>
+
+    <!-- New Chat Button -->
+    <button class="new-chat-btn" onclick="newChat()">
+      ✏️ &nbsp; New Chat
+    </button>
+
+    <!-- Study Topics -->
+    <div class="sidebar-label">Study Topics</div>
+    <div class="topic-chips">
+      <div class="topic-chip" onclick="useSuggestion('Help me understand the Pythagorean theorem with examples.')">
+        📐 Mathematics
+      </div>
+      <div class="topic-chip" onclick="useSuggestion('Explain Newton\'s laws of motion simply.')">
+        🔬 Physics
+      </div>
+      <div class="topic-chip" onclick="useSuggestion('What is photosynthesis and how does it work?')">
+        🌿 Biology
+      </div>
+      <div class="topic-chip" onclick="useSuggestion('Explain the causes and effects of World War II.')">
+        🏛️ History
+      </div>
+      <div class="topic-chip" onclick="useSuggestion('Help me understand for loops in Python with examples.')">
+        💻 Programming
+      </div>
+      <div class="topic-chip" onclick="useSuggestion('What are the best study techniques for memorizing fast?')">
+        🧠 Study Tips
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="sidebar-footer">
+      Powered by OpenAI GPT<br />
+      Built for Education 🎓
+    </div>
+
+  </aside>
+
+  <!-- ====================================================
+       MAIN CHAT AREA
+       ==================================================== -->
+  <main class="chat-container">
+
+    <!-- Top Header Bar -->
+    <div class="chat-header">
+      <div class="chat-header-left">
+        <div class="status-dot"></div>
+        <div>
+          <div class="chat-title">StudyBot</div>
+          <div class="chat-subtitle">Your AI-powered study assistant</div>
+        </div>
+      </div>
+      <div class="header-badge">Education AI</div>
+    </div>
+
+    <!-- Messages Area -->
+    <div class="messages-area" id="messages-area">
+
+      <!-- Welcome Screen (hidden after first message) -->
+      <div class="welcome-screen" id="welcome-screen">
+        <div class="welcome-icon">📚</div>
+        <div class="welcome-title">Hello, I'm StudyBot!</div>
+        <div class="welcome-subtitle">
+          Ask me anything about your studies — math, science, history, programming, and more. I'm here to help you learn smarter! ✨
+        </div>
+
+        <!-- Suggestion Cards -->
+        <div class="suggestion-grid">
+          <div class="suggestion-card" onclick="useSuggestion('Explain the concept of photosynthesis in simple terms.')">
+            <div class="s-icon">🌿</div>
+            <div class="s-text">Explain photosynthesis in simple terms</div>
+          </div>
+          <div class="suggestion-card" onclick="useSuggestion('What are the best ways to prepare for an exam?')">
+            <div class="s-icon">📝</div>
+            <div class="s-text">Best exam preparation strategies</div>
+          </div>
+          <div class="suggestion-card" onclick="useSuggestion('Help me understand what a variable is in programming.')">
+            <div class="s-icon">💻</div>
+            <div class="s-text">What is a variable in programming?</div>
+          </div>
+          <div class="suggestion-card" onclick="useSuggestion('Quiz me on the causes of World War I.')">
+            <div class="s-icon">🏛️</div>
+            <div class="s-text">Quiz me on World War I causes</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /messages-area -->
+
+    <!-- ====================================================
+         INPUT AREA
+         ==================================================== -->
+    <div class="input-area">
+      <div class="input-wrapper">
+
+        <textarea
+          id="user-input"
+          placeholder="Ask me any study question... (Enter to send, Shift+Enter for new line)"
+          rows="1"
+          maxlength="1000"
+        ></textarea>
+
+        <div class="input-actions">
+          <span class="char-count" id="char-count">0</span>
+          <button id="send-btn" title="Send message">
+            ➤
+          </button>
+        </div>
+
+      </div>
+      <div class="input-hint">
+        StudyBot focuses only on educational topics 📖 — ask anything about your coursework!
+      </div>
+    </div>
+
+  </main><!-- /chat-container -->
+
+</div><!-- /app-wrapper -->
+
+<script src="app.js"></script>
+</body>
+</html>
