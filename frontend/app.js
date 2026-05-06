@@ -16,7 +16,7 @@
 // For production (Render): https://your-app.onrender.com
 // ============================================================
 
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "https://chatbot-i97m.onrender.com";
 // ============================================================
 // SESSION MANAGEMENT
 // We use localStorage to persist the sessionId across page reloads.
